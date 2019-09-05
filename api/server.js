@@ -1,11 +1,16 @@
 const express = require('express');
 const helmet = require('helmet');
 
+
+console.log("env: ", process.env.NODE_ENV);
+
 const apiRouter = require('./api-router.js');
 
 const server = express();
 
 server.use(helmet());
+
+server.require("dotenv").config();
 
 server.use('/api', apiRouter);
 

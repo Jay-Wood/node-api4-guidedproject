@@ -10,8 +10,6 @@ const server = express();
 
 server.use(helmet());
 
-server.require("dotenv").config();
-
 server.use('/api', apiRouter);
 
 module.exports = server;
